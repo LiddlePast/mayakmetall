@@ -18,7 +18,7 @@
                     </p>
                 </div>
                 <div class="contacts__cite">
-                    <p>Сайт: <a href="https://mk.mayakmetall.ru" class="hover:text-accent transition-colors">mk.mayakmetall.ru</a>
+                    <p>Сайт: <a href="https://mk.mayakmetall.ru" target="_blank" class="hover:text-accent transition-colors">mk.mayakmetall.ru</a>
                     </p>
                 </div>
             </div>
