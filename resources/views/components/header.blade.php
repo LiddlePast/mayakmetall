@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="header__inner flex items-center justify-between py-10 px-5">
+    <div class="header__inner flex items-center justify-between py-10 px-5 container mx-auto">
         <nav class="header__menu menu">
             <ul class="menu__list space-x-5">
                 <li class="menu__item inline-block">

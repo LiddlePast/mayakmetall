@@ -1,5 +1,5 @@
 <footer class="footer bg-gray-dark">
-    <div class="footer__inner flex justify-between items-start py-10 px-5">
+    <div class="footer__inner flex justify-between items-start py-10 px-5 container mx-auto">
         <div class="footer__left space-y-5">
             <div class="footer__logo logo w-[200px]">
                 <img src="{{ asset('/logo.png') }}" alt="Логотип МАЯКМЕТАЛЛ" class="object-center object-contain w-full h-full">
