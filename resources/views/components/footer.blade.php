@@ -40,7 +40,7 @@
                            class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black">Каталог</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#"
+                        <a href="{{ route('contacts') }}"
                            class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black">Контакты</a>
                     </li>
                 </ul>
