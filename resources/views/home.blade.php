@@ -31,12 +31,12 @@
                 <p><span class="benefit__heading font-bold text-xl leading-relaxed">Собственное производство.</span><br>Площадью 100 000 квадратных метров по производству легких металлоконструкций и металлопроката методом холодного профилирования</p>
             </div>
             <div class="benefit__image grow max-w-[50%]">
-                <img src="" alt="">
+                <img src="{{ asset('/storage/self.webp') }}" alt="Собственное производство">
             </div>
         </div>
         <div class="section-benefits__benefit flex">
             <div class="benefit__image grow max-w-[50%]">
-                <img src="" alt="">
+                <img src="{{ asset('/storage/team.webp') }}" alt="Команда профессионалов">
             </div>
             <div class="benefit__text grow max-w-[50%]">
                 <p><span class="benefit__heading font-bold text-xl leading-relaxed">Команда профессионалов.</span><br>Высокий профессионализм наших проектировщиков, технологов, рабочих и строителей – основа успешной реализации вашего проекта</p>
