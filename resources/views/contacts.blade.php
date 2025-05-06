@@ -21,7 +21,7 @@
                 <p class="text-xl">По вопросам покупки сэндвич-панелей и профлиста:<br><a href="tel:88007700198" class="hover:text-accent transition-colors">+7 (800) 770-0198</a>, Email: <a href="mailto:info@mayakmetall.ru" class="hover:text-accent transition-colors">info@mayakmetall.ru</a></p>
             </div>
             <div class="section-feedback__form feedback-form">
-                <form action="#" class="feedback-form__form-content w-full h-full border border-gray shadow-sm shadow-gray p-5 rounded bg-accent space-y-5">
+                <form action="#" method="post" class="feedback-form__form-content w-full h-full border border-gray shadow-sm shadow-gray p-5 rounded bg-accent space-y-5">
                     @csrf
                     <div class="feedback-form__field form-field w-full h-full">
                         <label for="message" class="form-field__label font-bold text-2xl">Ваше сообщение:</label>
