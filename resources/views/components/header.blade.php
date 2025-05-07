@@ -22,5 +22,10 @@
         <div class="page-title min-w-[200px] text-end">
             <h1 class="text-xl font-bold text-black">@yield('page-title')</h1>
         </div>
+        <div class="header__icons">
+            <svg viewBox="0 0 24 24" height="24" width="24">
+                <use class="icon" href="{{ asset('/icons.svg#cart') }}" height="24" width="24"></use>
+            </svg>
+        </div>
     </div>
 </header>
