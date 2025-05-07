@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Cart extends Model
+class OrderItem extends Model
 {
-    public function user(): BelongsTo
+    public function order(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Order::class);
     }
 
-    public function cartItems(): HasMany
+    public function products(): HasMany
     {
-        return $this->hasMany(CartItem::class);
+        return $this->hasMany(Product::class);
     }
 }
