@@ -16,5 +16,9 @@ Route::controller(CatalogController::class)->name('catalog.')->group(function ()
 });
 
 Route::controller(UserController::class)->name('user.')->group(function () {
-    Route::get('/login', 'loginPage')->name('login-page');
+    Route::get('/login', 'loginPage')->name('login-page')->middleware('guest');
+    Route::get('/register', 'registerPage')->name('register-page')->middleware('guest');
+    Route::post('/register', 'registerUser')->name('register')->middleware('guest');
+    Route::post('/login', 'loginUser')->name('login')->middleware('guest');
+    Route::match(['get', 'post'], '/logout', 'logoutUser')->name('logout')->middleware('auth');
 });

@@ -3,6 +3,11 @@
 @section('page-title', 'Главная')
 
 @section('main')
+    @if(session('success'))
+        <div class="status fixed right-10 bottom-10 p-5 rounded bg-white z-10">
+            <p class="text-xl text-green-700">{{ session('success') }}</p>
+        </div>
+    @endif
     <section
         class="main__section-hero section bg-cover py-50 relative">
         <div
