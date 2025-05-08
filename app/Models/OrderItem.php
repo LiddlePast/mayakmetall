@@ -13,8 +13,8 @@ class OrderItem extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function products(): HasMany
+    public function categories(): HasMany
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Category::class);
     }
 }

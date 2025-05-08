@@ -12,7 +12,7 @@
     <title>МАЯКМЕТАЛЛ | @yield('page-title')</title>
     @vite(['resources/css/app.css'])
 </head>
-<body class="font-roboto h-full">
+<body class="font-roboto h-full selection:bg-accent">
     <div class="wrapper flex flex-col h-full mx-auto">
         <x-header></x-header>
         <main class="main grow">

@@ -3,34 +3,24 @@
 @section('page-title', 'Каталог')
 
 @section('main')
-    <section class="main__section-map section-map section h-[800px]">
-        <div class="section-map__content w-full h-full">
-            <img src="{{ asset('/storage/map.png') }}" alt="Карта" class="h-full w-full object-cover object-center">
-        </div>
-    </section>
-    <section class="main__section-feedback section-feedback section py-20">
-        <div class="section-feedback__wrapper max-w-[1200px] mx-auto flex items-center gap-10">
-            <div class="section-feedback__data space-y-5">
-                <h2 class="text-black font-bold text-3xl mb-5">Реквизиты</h2>
-                <p class="leading-relaxed text-xl">Общество с ограниченной ответственностью<br>КАНСКИЙ ЗАВОД ЛЕГКИХ МЕТАЛЛОКОНСТРУКЦИЙ "МАЯК"<br>ООО
-                    КЗЛМК «МАЯК»<br>ИНН 2450014720</p>
-                <p class="text-xl">663606, Красноярский край, г. Канск, 9 км Тасеевского тракта, дом 1, строение 13.</p>
-                <p class="text-xl">Приемная: <a href="tel:83916129782" class="hover:text-accent transition-colors">+7 (39161)
-                        2-97-82</a>, Email: <a href="mailto:kansk@mayakmetall.ru"
-                                               class="hover:text-accent transition-colors">kansk@mayakmetall.ru</a></p>
-                <p class="text-xl">По вопросам покупки сэндвич-панелей и профлиста:<br><a href="tel:88007700198" class="hover:text-accent transition-colors">+7 (800) 770-0198</a>, Email: <a href="mailto:info@mayakmetall.ru" class="hover:text-accent transition-colors">info@mayakmetall.ru</a></p>
-            </div>
-            <div class="section-feedback__form feedback-form">
-                <form action="#" method="post" class="feedback-form__form-content w-full h-full border border-gray shadow-sm shadow-gray p-5 rounded bg-accent space-y-5">
-                    @csrf
-                    <div class="feedback-form__field form-field w-full h-full">
-                        <label for="message" class="form-field__label font-bold text-2xl">Ваше сообщение:</label>
-                        <textarea name="message" id="message" class="form-field__input w-full border p-2 rounded bg-white mt-5 resize-none focus-visible:outline-2 focus-visible:outline-white focus-visible:transition-all h-[300px] border-gray"></textarea>
-                    </div>
-                    <div class="feedback-form__button w-full h-full">
-                        <button type="submit" class="form-button w-full h-full bg-white p-5 rounded cursor-pointer uppercase font-bold tracking-wide hover:bg-black hover:text-white transition-all">Отправить сообщение</button>
-                    </div>
-                </form>
+    <section class="main__section-catalog section-catalog section py-20">
+        <div class="section-catalog__wrapper container mx-auto flex items-center gap-10">
+            <div class="catalog__categories flex flex-wrap gap-5">
+                @if($categories)
+                    @foreach($categories as $category)
+                        <div class="catalog-category flex border border-gray max-w-[480px] h-[300px] gap-5 rounded cursor-pointer hover:shadow hover:shadow-accent transition-all hover:border-accent">
+                            <div class="catalog-category__image h-full w-1/2 rounded overflow-hidden">
+                                <img src="{{ asset('/images-catalog/' . $category->image . '.png') }}" alt="{{ $category->description }}" class="object-center object-cover w-full h-full">
+                            </div>
+                            <div class="catalog-category__description w-1/2 py-2 pr-2">
+                                <p class="font-bold text-2xl">{{ $category->name }}</p>
+                                <p class="mt-5 text-pretty">{{ $category->description }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Пока что пусто...</p>
+                @endif
             </div>
         </div>
     </section>

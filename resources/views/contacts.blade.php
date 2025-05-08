@@ -5,7 +5,7 @@
 @section('main')
     <section class="main__section-map section-map section h-[800px]">
         <div class="section-map__content w-full h-full">
-            <img src="{{ asset('/storage/map.png') }}" alt="Карта" class="h-full w-full object-cover object-center">
+            <img src="{{ asset('/images/map.png') }}" alt="Карта" class="h-full w-full object-cover object-center">
         </div>
     </section>
     <section class="main__section-feedback section-feedback section py-20">
