@@ -3,16 +3,16 @@
         <nav class="header__menu menu">
             <ul class="menu__list space-x-5">
                 <li class="menu__item inline-block">
-                    <a href="{{ route('home') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black">Главная</a>
+                    <a href="{{ route('home') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black focus-visible:outline-0 focus-visible:text-accent focus-visible:transition-all focus-visible:after:transition-all focus-visible:after:absolute focus-visible:after:left-0 focus-visible:after:-bottom-2 focus-visible:after:h-1 focus-visible:after:bg-accent focus-visible:after:w-full focus-visible:after:rounded">Главная</a>
                 </li>
                 <li class="menu__item inline-block">
-                    <a href="{{ route('about') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black">О компании</a>
+                    <a href="{{ route('about') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black focus-visible:outline-0 focus-visible:text-accent focus-visible:transition-all focus-visible:after:transition-all focus-visible:after:absolute focus-visible:after:left-0 focus-visible:after:-bottom-2 focus-visible:after:h-1 focus-visible:after:bg-accent focus-visible:after:w-full focus-visible:after:rounded">О компании</a>
                 </li>
                 <li class="menu__item inline-block">
-                    <a href="{{ route('catalog.index') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black">Каталог</a>
+                    <a href="{{ route('catalog.index') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black focus-visible:outline-0 focus-visible:text-accent focus-visible:transition-all focus-visible:after:transition-all focus-visible:after:absolute focus-visible:after:left-0 focus-visible:after:-bottom-2 focus-visible:after:h-1 focus-visible:after:bg-accent focus-visible:after:w-full focus-visible:after:rounded">Каталог</a>
                 </li>
                 <li class="menu__item inline-block">
-                    <a href="{{ route('contacts') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black">Контакты</a>
+                    <a href="{{ route('contacts') }}" class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black focus-visible:outline-0 focus-visible:text-accent focus-visible:transition-all focus-visible:after:transition-all focus-visible:after:absolute focus-visible:after:left-0 focus-visible:after:-bottom-2 focus-visible:after:h-1 focus-visible:after:bg-accent focus-visible:after:w-full focus-visible:after:rounded">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -23,9 +23,11 @@
             <h1 class="text-xl font-bold text-black">@yield('page-title')</h1>
         </div>
         <div class="header__icons">
-            <svg viewBox="0 0 24 24" height="24" width="24">
-                <use class="icon" href="{{ asset('/icons.svg#cart') }}" height="24" width="24"></use>
-            </svg>
+            <a href="{{ route('user.login-page') }}" class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all">
+                <svg viewBox="0 0 24 24" height="24" width="24">
+                    <use class="icon" href="{{ asset('/icons.svg#cart') }}" height="24" width="24"></use>
+                </svg>
+            </a>
         </div>
     </div>
 </header>
