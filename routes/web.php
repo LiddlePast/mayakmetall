@@ -7,7 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', HomeController::class)->name('main');
 Route::get('/contacts', ContactsController::class)->name('contacts');
 Route::get('/about', AboutController::class)->name('about');
 
@@ -16,6 +16,7 @@ Route::controller(CatalogController::class)->name('catalog.')->group(function ()
 });
 
 Route::controller(UserController::class)->name('user.')->group(function () {
+    Route::get('/home', 'home')->name('home')->middleware('auth');
     Route::get('/login', 'loginPage')->name('login-page')->middleware('guest');
     Route::get('/register', 'registerPage')->name('register-page')->middleware('guest');
     Route::post('/register', 'registerUser')->name('register')->middleware('guest');

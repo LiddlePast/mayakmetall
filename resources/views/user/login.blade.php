@@ -6,7 +6,7 @@
     <section class="main__section-login section-login section py-10">
         <div class="section-wrapper container mx-auto px-5">
             @if(session('error'))
-                <div class="status">
+                <div class="status fixed right-10 bottom-10 p-5 rounded bg-white z-10">
                     <p class="text-xl text-red-700">{{ session('error') }}</p>
                 </div>
             @endif
@@ -14,7 +14,7 @@
                 @csrf
                 <div class="login-form__field flex flex-col gap-2">
                     <label for="email" class="login-form__label text-xl">Email</label>
-                    <input type="email" class="login-form__input @error('email') border-red-700 @enderror border rounded text-xl p-2 border-gray focus-visible:outline-2 outline-0 outline-transparent focus-visible:outline-offset-2 transition-all focus-visible:border-transparent focus-visible:outline-accent focus-visible:transition-colors" id="email" name="email">
+                    <input type="email" class="login-form__input @error('email') border-red-700 @enderror border rounded text-xl p-2 border-gray focus-visible:outline-2 outline-0 outline-transparent focus-visible:outline-offset-2 transition-all focus-visible:border-transparent focus-visible:outline-accent focus-visible:transition-colors" id="email" name="email" value="{{ old('email') }}">
                     <span class="text-red-700"><small>@error('email') {{ $message }} @enderror</small></span>
                 </div>
                 <div class="login-form__field flex flex-col gap-2">

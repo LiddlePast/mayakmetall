@@ -13,6 +13,12 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
+    public function home(): View
+    {
+        $user = Auth::user();
+        return view('user.home', compact('user'));
+    }
+
     public function loginPage(): View
     {
         return view('user.login');
@@ -30,9 +36,9 @@ class UserController extends Controller
         $userPassword = $validated['password'];
         if (Auth::attempt(['email' => $userEmail, 'password' => $userPassword])) {
             $request->session()->regenerate();
-            return to_route('home')->with('success', 'Добро пожаловать');
+            return to_route('main')->with('success', 'Добро пожаловать');
         }
-        return to_route('user.register-page')->with('error', 'Ошибка аутентификации');
+        return to_route('user.login-page')->with('error', 'Неверный логин или пароль')->withInput();
     }
 
     public function registerUser(RegisterRequest $request): RedirectResponse
@@ -47,9 +53,9 @@ class UserController extends Controller
            'password' => Hash::make($userPassword),
         ]);
         if (Auth::attempt(['email' => $userEmail, 'password' => $userPassword])) {
-            return to_route('home')->with('success', 'Регистрация прошла успешно');
+            return to_route('main')->with('success', 'Регистрация прошла успешно');
         }
-        return to_route('user.register-page')->with('error', 'Ошибка при регистрации');
+        return to_route('user.register-page')->with('error', 'Ошибка при регистрации')->withInput();
     }
 
     public function logoutUser(Request $request): RedirectResponse

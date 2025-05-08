@@ -3,7 +3,7 @@
         <nav class="header__menu menu">
             <ul class="menu__list space-x-5">
                 <li class="menu__item inline-block">
-                    <a href="{{ route('home') }}"
+                    <a href="{{ route('main') }}"
                        class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black focus-visible:outline-0 focus-visible:text-accent focus-visible:transition-all focus-visible:after:transition-all focus-visible:after:absolute focus-visible:after:left-0 focus-visible:after:-bottom-2 focus-visible:after:h-1 focus-visible:after:bg-accent focus-visible:after:w-full focus-visible:after:rounded">Главная</a>
                 </li>
                 <li class="menu__item inline-block">
@@ -38,7 +38,13 @@
                 </a>
             @endguest
             @auth
-                <a href="{{ route('user.logout') }}"
+                <a href="{{ route('user.home') }}" title="Перейти в профиль"
+                   class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
+                    <svg viewBox="0 0 24 24" height="24" width="24">
+                        <use class="icon" href="{{ asset('/icons.svg#cart') }}" height="24" width="24"></use>
+                    </svg>
+                </a>
+                <a href="{{ route('user.logout') }}" title="Выйти из аккаунта"
                    class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
                     <svg viewBox="0 0 24 24" height="24" width="24">
                         <use class="icon" href="{{ asset('/icons.svg#logout') }}" width="24" height="24"></use>
