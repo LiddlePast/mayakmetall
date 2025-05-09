@@ -34,4 +34,5 @@ Route::controller(CartController::class)->name('cart.')->group(function () {
 
 Route::controller(OrderController::class)->name('order.')->group(function () {
     Route::post('/order', 'createOrder')->name('createOrder')->middleware('auth');
+    Route::patch('/order', 'updateOrder')->name('updateOrder')->middleware('auth');
 });

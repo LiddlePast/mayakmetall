@@ -30,4 +30,12 @@ class OrderController extends Controller
         }
         return to_route('user.home')->with('success', 'Заказ оформлен.');
     }
+
+    public function updateOrder(Request $request)
+    {
+        $order = Order::where('id', $request->order)->first();
+        $order->status = "Отменен";
+        $order->save();
+        return to_route('user.home')->with('success', 'Заказ отменен');
+    }
 }

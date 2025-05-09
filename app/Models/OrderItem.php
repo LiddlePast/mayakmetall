@@ -16,8 +16,8 @@ class OrderItem extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function categories(): HasMany
+    public function category(): BelongsTo
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

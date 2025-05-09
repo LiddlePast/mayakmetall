@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->datetime('order_date')->default(now());
-            $table->enum('status', ['pending', 'processing', 'completed', 'cancelled'])->default('pending');
+            $table->enum('status', ['Оформлен', 'В обработке', 'Завершен', 'Отменен'])->default('Оформлен');
             $table->timestamps();
             $table->softDeletes();
         });
