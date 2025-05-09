@@ -15,7 +15,7 @@ class CartController extends Controller
     public function index(): View
     {
         $userCart = Cart::where('user_id', Auth::id())->first();
-        $cartItems = CartItem::where('cart_id', $userCart->id)->get();
+        $cartItems = CartItem::where('cart_id', $userCart?->id)->get();
         return view('user.cart',  compact('cartItems'));
     }
 
@@ -41,8 +41,7 @@ class CartController extends Controller
     public function removeFromCart(Request $request): RedirectResponse
     {
         $userCart = Cart::where('user_id', Auth::id())->first();
-        $item = CartItem::where('cart_id', $userCart->id)->where('category_id', $request->category)->delete();
-//        dd($item);
+        CartItem::where('cart_id', $userCart->id)->where('category_id', $request->category)->delete();
         return to_route('cart.index');
     }
 }
