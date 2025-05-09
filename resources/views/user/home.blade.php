@@ -16,7 +16,7 @@
                     <p><span class="font-bold">Имя:&nbsp;</span>{{ $user->name }}</p>
                 </div>
                 <div class="user-data__email">
-                    <p><span class="font-bold">Email:&nbsp;</span>{{ $user->email }}</p>
+                    <p><span class="font-bold">Email:&nbsp;</span>{{ $user->email }}, {{ $user->role }}</p>
                 </div>
                 <div class="user-data__created-at">
                     <p><span class="font-bold">Дата создания аккаунта:&nbsp;</span>{{ $user->created_at }}</p>

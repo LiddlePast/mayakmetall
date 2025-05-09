@@ -44,6 +44,9 @@ class UserController extends Controller
         $userPassword = $validated['password'];
         if (Auth::attempt(['email' => $userEmail, 'password' => $userPassword])) {
             $request->session()->regenerate();
+            if (Auth::user()->role === 'admin') {
+                return to_route('admin.dashboard');
+            }
             return to_route('main')->with('success', 'Добро пожаловать');
         }
         return to_route('user.login-page')->with('error', 'Неверный логин или пароль')->withInput();
