@@ -30,18 +30,24 @@
         </div>
         <div class="header__icons flex gap-5">
             @guest
-                <a href="{{ route('user.login-page') }}"
+                <a href="{{ route('user.login-page') }}" title="Вход в личный кабинет"
+                   class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
+                    <svg viewBox="0 0 24 24" height="24" width="24">
+                        <use class="icon" href="{{ asset('/icons.svg#profile') }}" height="24" width="24"></use>
+                    </svg>
+                </a>
+            @endguest
+            @auth
+                <a href="{{ route('cart.index') }}" title="Корзина"
                    class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
                     <svg viewBox="0 0 24 24" height="24" width="24">
                         <use class="icon" href="{{ asset('/icons.svg#cart') }}" height="24" width="24"></use>
                     </svg>
                 </a>
-            @endguest
-            @auth
                 <a href="{{ route('user.home') }}" title="Перейти в профиль"
                    class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
                     <svg viewBox="0 0 24 24" height="24" width="24">
-                        <use class="icon" href="{{ asset('/icons.svg#cart') }}" height="24" width="24"></use>
+                        <use class="icon" href="{{ asset('/icons.svg#profile') }}" height="24" width="24"></use>
                     </svg>
                 </a>
                 <a href="{{ route('user.logout') }}" title="Выйти из аккаунта"

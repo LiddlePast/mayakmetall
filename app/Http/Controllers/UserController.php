@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\User\LoginRequest;
 use App\Http\Requests\User\RegisterRequest;
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -51,6 +52,9 @@ class UserController extends Controller
            'name' => $userName,
            'email' => $userEmail,
            'password' => Hash::make($userPassword),
+        ]);
+        Cart::create([
+            'user_id' => Auth::id(),
         ]);
         if (Auth::attempt(['email' => $userEmail, 'password' => $userPassword])) {
             return to_route('main')->with('success', 'Регистрация прошла успешно');

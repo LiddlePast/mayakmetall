@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('main');
@@ -22,4 +23,10 @@ Route::controller(UserController::class)->name('user.')->group(function () {
     Route::post('/register', 'registerUser')->name('register')->middleware('guest');
     Route::post('/login', 'loginUser')->name('login')->middleware('guest');
     Route::match(['get', 'post'], '/logout', 'logoutUser')->name('logout')->middleware('auth');
+});
+
+Route::controller(CartController::class)->name('cart.')->group(function() {
+    Route::get('/cart', 'index')->name('index')->middleware('auth');
+    Route::post('/cart', 'addToCart')->name('addToCart')->middleware('auth');
+    Route::delete('/cart/delete', 'removeFromCart')->name('removeFromCart')->middleware('auth');
 });

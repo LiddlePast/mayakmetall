@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CartItem extends Model
 {
+
+    protected $fillable = ['cart_id', 'category_id'];
     public function cart(): BelongsTo
     {
         return $this->belongsTo(Cart::class);
     }
 
-    public function categories(): HasMany
+    public function category(): belongsTo
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

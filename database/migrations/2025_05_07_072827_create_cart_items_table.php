@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('carts_id')->unique()->constrained();
-            $table->foreignId('categories_id')->unique()->constrained();
-            $table->integer('quantity');
+            $table->foreignId('cart_id')->constrained();
+            $table->foreignId('category_id')->unique()->constrained();
             $table->dateTime('added_at')->default(now());
             $table->timestamps();
         });
