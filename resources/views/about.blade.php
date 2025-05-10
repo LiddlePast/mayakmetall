@@ -3,7 +3,7 @@
 @section('page-title', 'О компании')
 
 @section('main')
-    <section class="main__section-about-common section-about-common section h-[800px] py-10">
+    <section class="main__section-about-common section-about-common section h-[800px] py-2 md:py-10">
         <div class="section-wrapper container mx-auto px-5">
             <p class="text-xl text-pretty text-justify">Компания МаякМеталл является гарантом успешной реализации
                 проекта по созданию или реконструкции проекта,так как несетответственность за обоснованность
@@ -15,7 +15,7 @@
             </div>
         </div>
     </section>
-    <section class="main__section-about-benefits section-about-benefits section my-10">
+    <section class="main__section-about-benefits section-about-benefits section my-2 md:my-10">
         <div class="section-wrapper container mx-auto px-5 flex gap-10">
             <div class="section-about-benefits__text space-y-10 basis-3/4">
                 <div class="section-about-benefits__text--first space-y-5">

@@ -4,8 +4,8 @@
 
 @section('main')
     @if(session('success'))
-        <div class="status fixed right-10 bottom-10 p-5 rounded bg-white z-30">
-            <p class="text-xl text-green-700">{{ session('success') }}</p>
+        <div class="status fixed right-10 bottom-10 p-2 md:p-5 rounded bg-white z-30 border border-green-700">
+            <p class="text-base md:text-xl text-green-700">{{ session('success') }}</p>
         </div>
     @endif
     <section
