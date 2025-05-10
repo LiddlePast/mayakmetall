@@ -22,5 +22,6 @@
         </main>
         <x-footer></x-footer>
     </div>
+    <script src="/scripts/header.js"></script>
 </body>
 </html>

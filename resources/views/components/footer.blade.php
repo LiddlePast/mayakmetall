@@ -1,6 +1,6 @@
 <footer class="footer bg-gray-dark">
-    <div class="footer__inner flex justify-between items-start py-10 px-5 container mx-auto">
-        <div class="footer__left space-y-5">
+    <div class="footer__inner flex gap-5 items-center md:justify-between md:items-start py-10 px-5 container mx-auto flex-col md:flex-row">
+        <div class="footer__left space-y-5 flex flex-col items-center md:items-start">
             <div class="footer__logo logo w-[200px]">
                 <img src="{{ asset('/logo.png') }}" alt="Логотип МАЯКМЕТАЛЛ"
                      class="object-center object-contain w-full h-full">
@@ -32,7 +32,7 @@
         </div>
         <div class="footer__right">
             <nav class="footer__menu menu">
-                <ul class="menu__list flex flex-col gap-2">
+                <ul class="menu__list flex flex-row gap-5 md:flex-col md:gap-2 flex-wrap justify-center">
                     <li class="menu__item">
                         <a href="{{ route('main') }}"
                            class="menu__link relative after:transition-all after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-1 after:bg-accent hover:after:w-full after:rounded text-xl text-black focus-visible:outline-0 focus-visible:text-accent focus-visible:transition-all">Главная</a>
