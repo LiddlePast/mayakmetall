@@ -10,7 +10,7 @@
                 разрабатываемых рекомендаций и предложений, рациональное и эффективное использование материалов и
                 финансовых ресурсов, выделенных в рамках договора.</p>
             <div class="section-about-common__image w-full h-full my-5">
-                <img src="{{ asset('/images/about.png') }}" alt="Комплекс"
+                <img src="{{ asset('/storage/images/about.png') }}" alt="Комплекс"
                      class="w-full h-full object-center object-cover">
             </div>
         </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="section-about-benefits__image basis-1/4">
-                <img src="{{ asset('/images/about-hero.webp') }}" alt="О компании - Процесс работы"
+                <img src="{{ asset('/storage/images/about-hero.webp') }}" alt="О компании - Процесс работы"
                      class="h-full w-full object-cover object-center">
             </div>
         </div>
@@ -43,13 +43,13 @@
     <section class="main__section-about-certificates section-about-certificates section my-10">
         <div class="section-wrapper container mx-auto px-5 flex flex-wrap justify-evenly">
             <div class="section-about-certificates__certificate w-[250px] h-[300px]">
-                <img src="{{ asset('/images/certificate.jpg') }}" alt="" class="object-center object-contain w-full h-full">
+                <img src="{{ asset('/storage/images/certificate.jpg') }}" alt="" class="object-center object-contain w-full h-full">
             </div>
             <div class="section-about-certificates__certificate w-[250px] h-[300px]">
-                <img src="{{ asset('/images/evidence.jpg') }}" alt="" class="object-center object-contain w-full h-full">
+                <img src="{{ asset('/storage/images/evidence.jpg') }}" alt="" class="object-center object-contain w-full h-full">
             </div>
             <div class="section-about-certificates__certificate w-[250px] h-[300px]">
-                <img src="{{ asset('/images/license.jpg') }}" alt="" class="object-center object-contain w-full h-full">
+                <img src="{{ asset('/storage/images/license.jpg') }}" alt="" class="object-center object-contain w-full h-full">
             </div>
         </div>
     </section>

@@ -40,6 +40,9 @@ Route::controller(OrderController::class)->name('order.')->group(function () {
 
 Route::controller(AdminController::class)->name('admin.')->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard')->middleware(['auth', 'checkAdmin']);
+    Route::get('/dashboard/categories', 'categories')->name('categories')->middleware(['auth', 'checkAdmin']);
+    Route::post('/dashboard/categories', 'createCategory')->name('createCategory')->middleware(['auth', 'checkAdmin']);
+    Route::delete('/dashboard/categories/{category}', 'deleteCategory')->name('deleteCategory')->middleware(['auth', 'checkAdmin']);
 });
 
 Route::fallback(function() {

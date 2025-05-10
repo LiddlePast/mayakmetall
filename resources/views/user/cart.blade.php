@@ -13,7 +13,7 @@
                             <div
                                 class="user-cart__item cart-item border border-gray rounded flex max-h-[400px] h-[150px] w-[380px] gap-5">
                                 <div class="cart-item__image h-full w-1/2 rounded overflow-hidden">
-                                    <img src="{{ asset('/images-catalog/' . $item->category->image . '.png') }}"
+                                    <img src="{{ asset('/storage/images/catalog/' . $item->category->image) }}"
                                          alt="{{ $item->category->description }}"
                                          class="h-full w-full object-cover object-center">
                                 </div>

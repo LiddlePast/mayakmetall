@@ -11,7 +11,7 @@
                         <div
                             class="catalog-category flex border border-gray max-w-[480px] h-auto gap-5 rounded cursor-pointer hover:shadow hover:shadow-accent transition-all hover:border-accent">
                             <div class="catalog-category__image h-full w-1/2 rounded overflow-hidden">
-                                <img src="{{ asset('/images-catalog/' . $category->image . '.png') }}"
+                                <img src="{{ asset('/storage/images/catalog/' . $category->image) }}"
                                      alt="{{ $category->description }}"
                                      class="object-center object-cover w-full h-full">
                             </div>
@@ -20,6 +20,7 @@
                                     <p class="font-bold text-2xl">{{ $category->name }}</p>
                                     <p class="mt-5 text-pretty">{{ $category->description }}</p>
                                 </div>
+                                @can('view-resource')
                                 <div class="catalog-category__action">
                                     <form action="{{ route('cart.addToCart') }}" method="post" class="">
                                         @csrf
@@ -29,6 +30,7 @@
                                         </button>
                                     </form>
                                 </div>
+                                @endcan
                             </div>
                         </div>
                     @endforeach

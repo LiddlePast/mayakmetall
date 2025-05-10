@@ -37,7 +37,7 @@
                                     <div class="order-item flex gap-2 items-center">
                                         <div class="order-item-image w-[70px] h-[70px] rounded overflow-hidden">
                                             <img
-                                                src="{{ asset('/images-catalog/' . $orderItem->category->image . '.png') }}"
+                                                src="{{ asset('/storage/images/catalog/' . $orderItem->category->image) }}"
                                                 alt="{{ $orderItem->category->description }}"
                                                 class="w-full h-full object-cover object-center">
                                         </div>
