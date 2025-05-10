@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -85,5 +87,36 @@ class AdminController extends Controller
         Storage::delete('images/catalog/' . $categoryImage);
         $category->delete();
         return to_route('admin.categories');
+    }
+
+    public function users(): View
+    {
+        $users = User::where('role', 'user')->get();
+        return view('admin.users', compact('users'));
+    }
+
+    public function editUser(User $user): View
+    {
+        return view('admin.edit-user', compact('user'));
+    }
+
+    public function updateUser(Request $request, User $user): RedirectResponse
+    {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:8',
+        ]);
+        $user->name = $validated['name'];
+        $user->email = $validated['email'];
+        $user->password = Hash::make($validated['password']);
+        $user->save();
+        return to_route('admin.users');
+    }
+
+    public function deleteUser(User $user): RedirectResponse
+    {
+        $user->delete();
+        return to_route('admin.users');
     }
 }

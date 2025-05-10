@@ -42,9 +42,13 @@ Route::controller(AdminController::class)->name('admin.')->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard')->middleware(['auth', 'checkAdmin']);
     Route::get('/dashboard/categories', 'categories')->name('categories')->middleware(['auth', 'checkAdmin']);
     Route::post('/dashboard/categories', 'createCategory')->name('createCategory')->middleware(['auth', 'checkAdmin']);
+    Route::get('/dashboard/users', 'users')->name('users')->middleware(['auth', 'checkAdmin']);
+    Route::get('/dashboard/users/{user}', 'editUser')->name('editUser')->middleware(['auth', 'checkAdmin']);
     Route::get('/dashboard/categories/{category}', 'editCategory')->name('editCategory')->middleware(['auth', 'checkAdmin']);
     Route::patch('/dashboard/categories/{category}/update', 'updateCategory')->name('updateCategory')->middleware(['auth', 'checkAdmin']);
+    Route::patch('/dashboard/users/{user}/update', 'updateUser')->name('updateUser')->middleware(['auth', 'checkAdmin']);
     Route::delete('/dashboard/categories/{category}', 'deleteCategory')->name('deleteCategory')->middleware(['auth', 'checkAdmin']);
+    Route::delete('/dashboard/users/{user}', 'deleteUser')->name('deleteUser')->middleware(['auth', 'checkAdmin']);
 });
 
 Route::fallback(function() {

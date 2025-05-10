@@ -11,8 +11,8 @@
     <section class="main__section-dashboard-actions dashboard-actions section">
         <div class="dashboard-actions__inner max-w-[1400px] mx-auto">
             <p><a href="{{ route('admin.categories') }}" class="hover:text-accent focus-visible:text-accent focus-visible:outline-0 transition-all">Управление категориями услуг</a></p>
-            <p><a href="{{ route('admin.categories') }}" class="hover:text-accent focus-visible:text-accent focus-visible:outline-0 transition-all">Управление заказами</a></p>
-            <p><a href="{{ route('admin.categories') }}" class="hover:text-accent focus-visible:text-accent focus-visible:outline-0 transition-all">Управление пользователями</a></p>
+            <p><a href="{{ route('admin.users') }}" class="hover:text-accent focus-visible:text-accent focus-visible:outline-0 transition-all">Управление заказами</a></p>
+            <p><a href="{{ route('admin.users') }}" class="hover:text-accent focus-visible:text-accent focus-visible:outline-0 transition-all">Управление пользователями</a></p>
         </div>
     </section>
 @endsection
