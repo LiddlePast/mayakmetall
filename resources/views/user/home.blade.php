@@ -46,7 +46,7 @@
                                 @endforeach
                             </div>
                             <div class="order-actions flex justify-end items-center gap-8">
-                                @if($item[0]->order->status !== 'Отменен')
+                                @if($item[0]->order->status !== 'Отменен' && $item[0]->order->status !== 'Завершен')
                                     <form action="{{ route('order.updateOrder') }}" method="post" class="inline-block">
                                         @csrf
                                         @method('PATCH')

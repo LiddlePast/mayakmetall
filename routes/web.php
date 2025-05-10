@@ -45,6 +45,9 @@ Route::controller(AdminController::class)->name('admin.')->group(function () {
     Route::get('/dashboard/users', 'users')->name('users')->middleware(['auth', 'checkAdmin']);
     Route::get('/dashboard/users/{user}', 'editUser')->name('editUser')->middleware(['auth', 'checkAdmin']);
     Route::get('/dashboard/categories/{category}', 'editCategory')->name('editCategory')->middleware(['auth', 'checkAdmin']);
+    Route::get('/dashboard/orders', 'orders')->name('orders')->middleware(['auth', 'checkAdmin']);
+    Route::get('/dashboard/orders/{order}', 'showOrder')->name('show-order')->middleware(['auth', 'checkAdmin']);
+    Route::patch('/dashboard/orders/{order}/update', 'updateOrder')->name('updateOrder')->middleware(['auth', 'checkAdmin']);
     Route::patch('/dashboard/categories/{category}/update', 'updateCategory')->name('updateCategory')->middleware(['auth', 'checkAdmin']);
     Route::patch('/dashboard/users/{user}/update', 'updateUser')->name('updateUser')->middleware(['auth', 'checkAdmin']);
     Route::delete('/dashboard/categories/{category}', 'deleteCategory')->name('deleteCategory')->middleware(['auth', 'checkAdmin']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -118,5 +119,23 @@ class AdminController extends Controller
     {
         $user->delete();
         return to_route('admin.users');
+    }
+
+    public function orders(): View
+    {
+        $orders = Order::latest()->get();
+        return view('admin.orders', compact('orders'));
+    }
+
+    public function showOrder(Order $order): View
+    {
+        return view('admin.show-order', compact('order'));
+    }
+
+    public function updateOrder(Request $request, Order $order): RedirectResponse
+    {
+        $order->status = $request->input('status');
+        $order->save();
+        return to_route('admin.orders');
     }
 }

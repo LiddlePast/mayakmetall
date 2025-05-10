@@ -10,7 +10,7 @@
     </section>
     <section class="main__section-dashboard section-dashboard section pb-10">
         <div class="section-dashboard__create-category create-category max-w-[1400px] mx-auto">
-            <form action="{{ route('admin.updateUser', ['user' => $user->id]) }}" method="post"
+            <form action="{{ route('admin.updateCategory', ['category' => $user->id]) }}" method="post"
                   class="create-category__form space-y-5"
                   enctype="multipart/form-data">
                 @method('PATCH')
