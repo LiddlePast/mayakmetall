@@ -91,13 +91,13 @@
                 </div>
             </nav>
         </div>
-        <div class="page-title md:min-w-[200px] text-end pr-5">
+        <div class="page-title hidden sm:block md:min-w-[200px] text-end pr-5">
             <h1 class="text-xl font-bold text-black">@yield('page-title')</h1>
         </div>
         <div class="header__icons flex gap-5">
             @guest
                 <a href="{{ route('user.login-page') }}" title="Вход в личный кабинет"
-                   class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
+                   class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all hidden md:block">
                     <svg viewBox="0 0 24 24" height="24" width="24">
                         <use class="icon" href="{{ asset('/icons.svg#profile') }}" height="24" width="24"></use>
                     </svg>

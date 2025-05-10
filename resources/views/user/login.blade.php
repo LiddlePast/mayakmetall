@@ -6,20 +6,20 @@
     <section class="main__section-login section-login section py-10">
         <div class="section-wrapper container mx-auto px-5">
             @if(session('error'))
-                <div class="status fixed right-10 bottom-10 p-5 rounded bg-white z-10">
-                    <p class="text-xl text-red-700">{{ session('error') }}</p>
+                <div class="status fixed right-10 bottom-10 p-2 md:p-5 rounded bg-white z-10 border border-red-700">
+                    <p class="text-base md:text-xl text-red-700">{{ session('error') }}</p>
                 </div>
             @endif
-            <form action="{{ route('user.login') }}" method="post" class="login-form space-y-5 w-1/2 mx-auto">
+            <form action="{{ route('user.login') }}" method="post" class="login-form space-y-5 w-full md:w-1/2 mx-auto">
                 @csrf
                 <div class="login-form__field flex flex-col gap-2">
                     <label for="email" class="login-form__label text-xl">Email</label>
-                    <input type="email" class="login-form__input @error('email') border-red-700 @enderror border rounded text-xl p-2 border-gray focus-visible:outline-2 outline-0 outline-transparent focus-visible:outline-offset-2 transition-all focus-visible:border-transparent focus-visible:outline-accent focus-visible:transition-colors" id="email" name="email" value="{{ old('email') }}">
+                    <input type="email" class="login-form__input @error('email') border-red-700 @enderror border rounded text-xl p-2 border-gray focus-visible:outline-2 outline-0 outline-transparent focus-visible:outline-offset-2 transition-all focus-visible:border-transparent focus-visible:outline-accent focus-visible:transition-colors" id="email" name="email" value="{{ old('email') }}" required>
                     <span class="text-red-700"><small>@error('email') {{ $message }} @enderror</small></span>
                 </div>
                 <div class="login-form__field flex flex-col gap-2">
                     <label for="password" class="login-form__label text-xl">Пароль</label>
-                    <input type="password" class="login-form__input @error('password') border-red-700 @enderror border rounded text-xl p-2 border-gray focus-visible:outline-2 outline-0 outline-transparent focus-visible:outline-offset-2 transition-all focus-visible:border-transparent focus-visible:outline-accent focus-visible:transition-colors" id="password" name="password">
+                    <input type="password" class="login-form__input @error('password') border-red-700 @enderror border rounded text-xl p-2 border-gray focus-visible:outline-2 outline-0 outline-transparent focus-visible:outline-offset-2 transition-all focus-visible:border-transparent focus-visible:outline-accent focus-visible:transition-colors" id="password" name="password" required>
                     <span class="text-red-700"><small>@error('password') {{ $message }} @enderror</small></span>
                 </div>
                 <button type="submit" class="login-form__button form-button text-xl text-center border border-gray px-10 py-2 rounded w-full focus-visible:bg-accent transition-all focus-visible:text-white focus-visible:border-transparent focus-visible:outline-0 hover:bg-accent hover:text-white cursor-pointer hover:border-transparent">Вход</button>

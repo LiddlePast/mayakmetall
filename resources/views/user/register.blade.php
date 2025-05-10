@@ -6,11 +6,11 @@
     <section class="main__section-register section-register section py-10">
         <div class="section-wrapper container mx-auto px-5">
             @if(session('error'))
-                <div class="status fixed right-10 bottom-10 p-5 rounded bg-white z-10">
-                    <p class="text-xl text-red-700">{{ session('error') }}</p>
+                <div class="status fixed right-10 bottom-10 p-2 md:p-5 rounded bg-white z-10 border border-red-700">
+                    <p class="text-base md:text-xl text-red-700">{{ session('error') }}</p>
                 </div>
             @endif
-            <form action="{{ route('user.register') }}" method="post" class="register-form space-y-5 w-1/2 mx-auto">
+            <form action="{{ route('user.register') }}" method="post" class="register-form space-y-5 w-full md:w-1/2 mx-auto">
                 @csrf
                 <div class="register-form__field flex flex-col gap-2">
                     <label for="name" class="register-form__label text-xl">Имя</label>
