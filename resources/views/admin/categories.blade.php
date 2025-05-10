@@ -5,6 +5,9 @@
 @section('main')
     <section class="main__section-dashboard section-dashboard section py-10">
         <div class="section-dashboard__heading max-w-[1400px] mx-auto">
+            <div class="links mb-10">
+                <a href="{{ route('admin.dashboard') }}" class="hover:text-accent transition-all">< Назад</a>
+            </div>
             <h2 class="text-3xl font-bold">Панель управления | Управление категориями услуг</h2>
         </div>
     </section>
@@ -27,7 +30,8 @@
                             <td class="p-2">{{ $category->description }}</td>
                             <td class="p-2">{{ $category->image }}</td>
                             <td class="p-2 flex">
-                                <a href="" class="inline-block pr-2 border-r-2">Редактировать</a>
+                                <a href="{{ route('admin.editCategory', ['category' => $category->id]) }}"
+                                   class="inline-block pr-2 border-r-2">Редактировать</a>
                                 <form method="post" class="inline-block pl-2"
                                       action="{{ route('admin.deleteCategory', ['category' => $category->id]) }}">
                                     @csrf

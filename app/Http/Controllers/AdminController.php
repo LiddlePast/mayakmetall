@@ -48,6 +48,37 @@ class AdminController extends Controller
         return to_route('admin.categories');
     }
 
+    public function editCategory(Category $category): View
+    {
+        return view('admin.edit-category', compact('category'));
+    }
+
+    public function updateCategory(Request $request, Category $category): RedirectResponse
+    {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+        ], [
+            'name.required' => 'Укажите наименование категории',
+            'name.unique' => 'Такая категория уже существует',
+            'name.max' => 'Максимум символов для наименования - :max',
+            'description.required' => 'Укажите описание категории',
+            'image.image' => 'Необходимый тип файла - изображение',
+            'image.mimes' => 'Поддерживаемый формат файла - jpeg,png,jpg,gif,svg',
+        ]);
+        $category->name = $request->input('name');
+        $category->description = $request->input('description');
+        $image = $request->file('image') ?? null;
+        if ($image) {
+            $imageNameWithExt = $image->getClientOriginalName();
+            $category->image = $imageNameWithExt;
+            $image->storeAs('images/catalog', $imageNameWithExt);
+        }
+        $category->update();
+        return to_route('admin.categories');
+    }
+
     public function deleteCategory(Category $category): RedirectResponse
     {
         $categoryImage = $category->image;

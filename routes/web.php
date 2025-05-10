@@ -19,7 +19,7 @@ Route::controller(CatalogController::class)->name('catalog.')->group(function ()
 });
 
 Route::controller(UserController::class)->name('user.')->group(function () {
-    Route::get('/home', 'home')->name('home')->middleware('auth');
+    Route::get('/home', 'home')->name('home')->middleware(['auth', 'can:view-resource']);
     Route::get('/login', 'loginPage')->name('login-page')->middleware('guest');
     Route::get('/register', 'registerPage')->name('register-page')->middleware('guest');
     Route::post('/register', 'registerUser')->name('register')->middleware('guest');
@@ -42,6 +42,8 @@ Route::controller(AdminController::class)->name('admin.')->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard')->middleware(['auth', 'checkAdmin']);
     Route::get('/dashboard/categories', 'categories')->name('categories')->middleware(['auth', 'checkAdmin']);
     Route::post('/dashboard/categories', 'createCategory')->name('createCategory')->middleware(['auth', 'checkAdmin']);
+    Route::get('/dashboard/categories/{category}', 'editCategory')->name('editCategory')->middleware(['auth', 'checkAdmin']);
+    Route::patch('/dashboard/categories/{category}/update', 'updateCategory')->name('updateCategory')->middleware(['auth', 'checkAdmin']);
     Route::delete('/dashboard/categories/{category}', 'deleteCategory')->name('deleteCategory')->middleware(['auth', 'checkAdmin']);
 });
 

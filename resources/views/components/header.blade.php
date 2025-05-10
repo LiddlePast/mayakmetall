@@ -52,6 +52,14 @@
                         </svg>
                     </a>
                 @endcan
+                @can('view-all')
+                    <a href="{{ route('admin.dashboard') }}" title="Перейти в панель управления"
+                       class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
+                        <svg viewBox="0 0 24 24" height="24" width="24">
+                            <use class="icon" href="{{ asset('/icons.svg#profile') }}" height="24" width="24"></use>
+                        </svg>
+                    </a>
+                @endcan
                 <a href="{{ route('user.logout') }}" title="Выйти из аккаунта"
                    class="focus-visible:outline-0 focus-visible:text-accent hover:text-accent transition-all block">
                     <svg viewBox="0 0 24 24" height="24" width="24">
